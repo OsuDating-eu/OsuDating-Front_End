@@ -23,7 +23,7 @@ const isMenuOpen = ref(false)
       <div class="child" v-if="!isMobile()">
         <HeaderButton buttonText="Leaderboard" buttonDestination="leaderboard" :isFocused="$route.name == 'Leaderboard'"/>
       </div>
-      <a class="right-align child" @click="isMenuOpen = !isMenuOpen" v-if="isMobile()">
+      <a class="right-align child nav-menu" @click="isMenuOpen = !isMenuOpen" v-if="isMobile()">
         <FontAwesomeIcon :icon="faBars" />
       </a>
     </div>
@@ -37,6 +37,11 @@ const isMenuOpen = ref(false)
 <style scoped>
 .nav {
   box-shadow: 0 0 4px 0 black;
+}
+
+.nav-menu {
+  text-decoration: inherit;
+  color: var(--text-white)
 }
 
 .header-container {
