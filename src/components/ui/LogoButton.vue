@@ -1,6 +1,4 @@
 <script setup lang="ts">
-  import Logo from './Logo.vue';
-
   defineProps<{
     buttonText: string,
     buttonDestination: string,
@@ -10,7 +8,7 @@
 
 <template>
   <RouterLink class="container" :to="buttonDestination">
-    <Logo></Logo>
+    <img src="../../assets/images/logo.png" />
     <span v-if="!isMobile" class="textButton header-24">OsuDating</span>
   </RouterLink>
 </template>

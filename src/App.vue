@@ -28,8 +28,4 @@ import AppHeader from './components/layout/AppHeader.vue'
   left: 0;
   right: 0;
 }
-
-.main {
-  padding-top: 100px;
-}
 </style>
