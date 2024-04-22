@@ -36,7 +36,7 @@ const isMenuOpen = ref(false);
     >
       <HeaderButton
         button-text="Leaderboard"
-        button-destination="leaderboard"
+        button-destination="leaderboard/sdvx"
         :is-focused="$route.name == 'Leaderboard'"
       />
     </div>
