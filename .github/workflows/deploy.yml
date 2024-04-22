@@ -6,6 +6,7 @@ on:
       - closed
     branches:
       - 'development'
+  workflow_dispatch
 permissions: write-all
 jobs:
   push_to_pages:
