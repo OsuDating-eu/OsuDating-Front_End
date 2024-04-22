@@ -13,19 +13,11 @@ jobs:
         with:
           node-version: 20
 
-      - name: Run install
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: install # will run `yarn install` command
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # if needed
-          
-      - name: Linter
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: lint # will run `yarn lint` command
-          
-      - name: Build
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: build # will run `yarn build` command
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Run Linter
+        run: yarn lint
+
+      - name: Build Project
+        run: yarn build
