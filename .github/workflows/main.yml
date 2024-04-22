@@ -4,7 +4,7 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Build
+    name: Lint and Build test
     steps:
       - uses: actions/checkout@v3
 
@@ -30,7 +30,7 @@ jobs:
       - id: Build-Vue
         uses: xRealNeon/VuePagesAction@1.0.1
         with:
-          username: 'OsuDating-eu/'
+          username: 'OsuDating-eu'
           reponame: 'OsuDating-Front_End'
           token: ${{ secrets.GITHUB_TOKEN }}
           useyarn: true
