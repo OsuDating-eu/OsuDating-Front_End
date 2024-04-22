@@ -1,5 +1,5 @@
 name: Build
-run-name: Testing build with linter
+run-name: Build and deploy
 on: [push]
 jobs:
   build:
@@ -33,3 +33,4 @@ jobs:
           username: 'DannyPX'
           reponame: 'OsuDating-Front_End'
           token: ${{ secrets.GITHUB_TOKEN }}
+          useyarn: true
