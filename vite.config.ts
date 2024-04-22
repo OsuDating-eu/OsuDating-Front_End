@@ -8,4 +8,5 @@ export default defineConfig({
     vue(),
     VueDevTools()
   ],
+  base: '/OsuDating-Front_End/'
 });
