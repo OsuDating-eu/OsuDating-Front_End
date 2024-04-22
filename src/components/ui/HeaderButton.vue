@@ -1,14 +1,20 @@
 <script setup lang="ts">
-  defineProps<{
-    buttonText: string,
-    buttonDestination: string,
-    isFocused: boolean,
-  }>()
+defineProps<{
+  buttonText: string,
+  buttonDestination: string,
+  isFocused: boolean,
+}>();
 </script>
 
 <template>
   <div class="text-button">
-    <RouterLink class="button-link button-24" :class="{ focused: isFocused }" :to="buttonDestination">{{ buttonText }}</RouterLink>
+    <RouterLink
+      class="button-link button-24"
+      :class="{ focused: isFocused }"
+      :to="buttonDestination"
+    >
+      {{ buttonText }}
+    </RouterLink>
   </div>
 </template>
 
@@ -18,13 +24,13 @@
   padding-bottom: 6px;
 }
 
-.text-button .button-link{
+.text-button .button-link {
   text-decoration: inherit;
   color: var(--text-gray);
   transition: 0.3s;
 }
 
-.text-button:hover .button-link{
+.text-button:hover .button-link {
   color: var(--text-white)
 }
 

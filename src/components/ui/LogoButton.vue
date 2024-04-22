@@ -1,15 +1,21 @@
 <script setup lang="ts">
-  defineProps<{
-    buttonText: string,
-    buttonDestination: string,
-    isMobile: boolean,
-  }>()
+defineProps<{
+  buttonText: string,
+  buttonDestination: string,
+  isMobile: boolean,
+}>();
 </script>
 
 <template>
-  <RouterLink class="container" :to="buttonDestination">
-    <img src="../../assets/images/logo.png" />
-    <span v-if="!isMobile" class="textButton header-24">OsuDating</span>
+  <RouterLink
+    class="container"
+    :to="buttonDestination"
+  >
+    <img src="../../assets/images/logo.png">
+    <span 
+      v-if="!isMobile"
+      class="textButton header-24"
+    >OsuDating</span>
   </RouterLink>
 </template>
 
@@ -21,7 +27,7 @@
   text-decoration: inherit;
 }
 
-.container > .textButton {
+.container>.textButton {
   color: var(--text-white);
 }
 </style>

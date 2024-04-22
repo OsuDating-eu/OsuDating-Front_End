@@ -8,26 +8,59 @@ import LogoButton from '../ui/LogoButton.vue';
 import isMobile from '../../helpers/mobile';
 import { ref } from 'vue';
 
-const isMenuOpen = ref(false)
+const isMenuOpen = ref(false);
 </script>
 
 <template>
   <header class="header-container">
     <div class="child">
-      <LogoButton :isMobile="isMobile()" buttonText="OsuDating" buttonDestination="/"></LogoButton>
+      <LogoButton 
+        :is-mobile="isMobile()" 
+        button-text="OsuDating"
+        button-destination="/"
+      />
     </div>
-    <div class="child" v-if="!isMobile()">
-      <HeaderButton buttonText="Home" buttonDestination="/" :isFocused="$route.name == 'Home'"/>
+    <div
+      v-if="!isMobile()"
+      class="child"
+    >
+      <HeaderButton
+        button-text="Home"
+        button-destination="/"
+        :is-focused="$route.name == 'Home'"
+      />
     </div>
-    <div class="child" v-if="!isMobile()">
-      <HeaderButton buttonText="Leaderboard" buttonDestination="leaderboard" :isFocused="$route.name == 'Leaderboard'"/>
+    <div
+      v-if="!isMobile()"
+      class="child"
+    >
+      <HeaderButton
+        button-text="Leaderboard"
+        button-destination="leaderboard"
+        :is-focused="$route.name == 'Leaderboard'"
+      />
     </div>
-    <a class="right-align child nav-menu" @click="isMenuOpen = !isMenuOpen" v-if="isMobile()">
+    <a
+      v-if="isMobile()"
+      class="right-align child nav-menu"
+      @click="isMenuOpen = !isMenuOpen"
+    >
       <FontAwesomeIcon :icon="faBars" />
     </a>
-    <div v-if="isMenuOpen" class="nav-dropdown">
-      <HeaderButton buttonText="Home" buttonDestination="/" :isFocused="$route.name == 'Home'"/>
-      <HeaderButton buttonText="Leaderboard" buttonDestination="leaderboard" :isFocused="$route.name == 'Leaderboard'"/>
+    <div
+      v-if="isMenuOpen"
+      class="nav-dropdown"
+    >
+      <HeaderButton
+        button-text="Home"
+        button-destination="/"
+        :is-focused="$route.name == 'Home'"
+      />
+      <HeaderButton
+        button-text="Leaderboard"
+        button-destination="leaderboard"
+        :is-focused="$route.name == 'Leaderboard'"
+      />
     </div>
   </header>
 </template>
@@ -52,7 +85,7 @@ const isMenuOpen = ref(false)
   align-items: center;
 }
 
-.header-container > .child {
+.header-container>.child {
   min-height: 100px;
   align-items: center;
   justify-content: center;
