@@ -1,0 +1,12 @@
+:root {
+  --base-background: #242424;
+  --base-underground: #484848;
+  --base-underground-hover: #525252;
+
+  --text-white: white;
+  --text-gray: gray;
+
+  --theme-pink: #FF66AA;
+  --theme-pink-gradient: linear-gradient(to bottom, rgba(255,102,170,1) 0%, rgba(72,72,72,1) 100%);
+  --theme-white: white;
+}
