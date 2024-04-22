@@ -3,7 +3,11 @@ import AppHeader from './components/layout/AppHeader.vue'
 </script>
 
 <template>
-  <AppHeader />
+  <div class="parent">
+    <div class="element">
+      <AppHeader />
+    </div>
+  </div>
   <RouterView />
 </template>
 
@@ -13,16 +17,19 @@ import AppHeader from './components/layout/AppHeader.vue'
 </style>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.parent {
+  margin-top: 100px;
+  position: relative;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+.element {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.main {
+  padding-top: 100px;
 }
 </style>
