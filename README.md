@@ -1,9 +1,28 @@
-# OsuDating Frontend
+## About The Project
 
 Repository of the OsuDating.nl frontend.
 
-## Recommended Setup
+## Getting Started
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+### Prerequisites
 
-- Use [vue-tsc](https://github.com/vuejs/language-tools/tree/master/packages/tsc) for performing the same type checking from the command line, or for generating d.ts files for SFCs.
+- yarn
+  ```sh
+  npm install --global yarn
+  ```
+
+### Recommended Tools
+
+- Vue.volar - This is the official Vue extension. (It should notify in VSCode)
+
+### Installation
+
+1. Install Packages
+   ```sh
+   yarn install
+   ```
+2. Run Dev Server
+   ```sh
+   yarn dev
+   ```
+   Add `--host` to expose to Network.
