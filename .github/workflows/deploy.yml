@@ -1,12 +1,18 @@
 name: Build
 run-name: Build and Deploy
 on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: 'Confirm to deploy'
+        required: true
+        type: boolean
   pull_request:
     types:
       - closed
     branches:
       - 'development'
-  workflow_dispatch
+  
 permissions: write-all
 jobs:
   push_to_pages:
