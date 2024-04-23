@@ -26,3 +26,14 @@ Repository of the OsuDating.nl frontend.
    yarn dev
    ```
    Add `--host` to expose to Network.
+
+### Build
+1. Run Lint (Check if there are no errors)
+   ```sh
+   yarn lint
+   ```
+2. Build Project
+   ```sh
+   yarn build
+   ```
+3. Deploy /dist
