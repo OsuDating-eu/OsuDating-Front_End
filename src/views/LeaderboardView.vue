@@ -23,7 +23,10 @@ import isMobile from '../helpers/mobile';
     v-if="isMobile()"
     class="mobile-content"
   >
-    Mobile is not supported yet
+    <div class="header-36 header">
+      Leaderboard
+    </div>
+    <LeaderboardDropdown />
   </div>
 </template>
 
@@ -44,7 +47,12 @@ import isMobile from '../helpers/mobile';
   }
 
   .mobile-content {
+    margin: auto;
     padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .header {
     padding-bottom: 24px;
   }
 </style>

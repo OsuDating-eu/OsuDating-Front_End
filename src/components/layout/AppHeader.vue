@@ -14,8 +14,8 @@ const isMenuOpen = ref(false);
 <template>
   <header class="header-container">
     <div class="child">
-      <LogoButton 
-        :is-mobile="isMobile()" 
+      <LogoButton
+        :is-mobile="isMobile()"
         button-text="OsuDating"
         button-destination="/"
       />
@@ -55,11 +55,13 @@ const isMenuOpen = ref(false);
         button-text="Home"
         button-destination="/"
         :is-focused="$route.name == 'Home'"
+        @click="isMenuOpen = !isMenuOpen"
       />
       <HeaderButton
         button-text="Leaderboard"
-        button-destination="leaderboard"
+        button-destination="leaderboard/sdvx"
         :is-focused="$route.name == 'Leaderboard'"
+        @click="isMenuOpen = !isMenuOpen"
       />
     </div>
   </header>

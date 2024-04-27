@@ -4,10 +4,10 @@ import { ref } from 'vue';
 const currentGame = ref("Sound Voltex");
 
 const games = [
-  { name: "Sound Voltex", id: "sdvx" },
-  { name: "Beatmania IIDX", id: "iidx" },
-  { name: "Jubeat", id: "jubeat" },
-  { name: "Pop'n Music", id: "popn" }
+  { name: "Sound Voltex", shortName: "sdvx", id: 1 },
+  { name: "Beatmania IIDX", shortName: "iidx", id: 2 },
+  { name: "Pop'n Music", shortName: "popn", id: 3 },
+  { name: "Jubeat", shortName: "jubeat", id: 4 }
 ];
 </script>
 
@@ -20,7 +20,7 @@ const games = [
       <RouterLink
         v-for="(game, index) in games"
         :key="game.id"
-        :to="'/leaderboard/' + game.id"
+        :to="'/leaderboard/' + game.shortName"
         class="dropdown-item normal-20"
         :class="[{ dropdownlast: index === games.length - 1 }, 
                  { dropdownactive: currentGame === game.name }]"
