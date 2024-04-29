@@ -1,30 +1,23 @@
 <script script setup lang="ts">
-import { ref } from 'vue';
+import { useMainStore } from '../../stores/modules/main';
 
-const currentGame = ref("Sound Voltex");
-
-const games = [
-  { name: "Sound Voltex", shortName: "sdvx", id: 1 },
-  { name: "Beatmania IIDX", shortName: "iidx", id: 2 },
-  { name: "Pop'n Music", shortName: "popn", id: 3 },
-  { name: "Jubeat", shortName: "jubeat", id: 4 }
-];
+const mainStore = useMainStore()
 </script>
 
 <template>
   <div class="dropdown">
     <button class="normal-20 dropbtn">
-      {{ currentGame }}
+      {{ mainStore.currentGame?.name }}
     </button>
     <div class="dropdown-content">
       <RouterLink
-        v-for="(game, index) in games"
-        :key="game.id"
-        :to="'/leaderboard/' + game.shortName"
+        v-for="(game, index) in mainStore.possibleGames"
+        :key="game.id.toString"
+        :to="'/leaderboard/' + game.abbreviation"
         class="dropdown-item normal-20"
-        :class="[{ dropdownlast: index === games.length - 1 }, 
-                 { dropdownactive: currentGame === game.name }]"
-        @click="currentGame = game.name"
+        :class="[{ dropdownlast: index === mainStore.possibleGames.length - 1 }, 
+                 { dropdownactive: mainStore.currentGame === game }]"
+        @click="mainStore.newGame(game)"
       >
         {{ game.name }}
       </RouterLink>

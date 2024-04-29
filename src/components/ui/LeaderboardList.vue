@@ -8,7 +8,7 @@ defineProps<{
   <div>
     <table>
       <tr class="t-header">
-        <th></th>
+        <th />
       </tr>
     </table>
   </div>

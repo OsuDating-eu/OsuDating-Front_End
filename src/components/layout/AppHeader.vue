@@ -5,8 +5,12 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import HeaderButton from '../ui/HeaderButton.vue';
 import LogoButton from '../ui/LogoButton.vue';
 
+import { useMainStore } from '../../stores/modules/main';
+
 import isMobile from '../../helpers/mobile';
 import { ref } from 'vue';
+
+const mainStore = useMainStore()
 
 const isMenuOpen = ref(false);
 </script>
@@ -36,7 +40,7 @@ const isMenuOpen = ref(false);
     >
       <HeaderButton
         button-text="Leaderboard"
-        button-destination="leaderboard/sdvx"
+        :button-destination="'/leaderboard/' + mainStore.currentGame?.abbreviation"
         :is-focused="$route.name == 'Leaderboard'"
       />
     </div>
@@ -59,7 +63,7 @@ const isMenuOpen = ref(false);
       />
       <HeaderButton
         button-text="Leaderboard"
-        button-destination="leaderboard/sdvx"
+        :button-destination="'/leaderboard/' + mainStore.currentGame?.abbreviation"
         :is-focused="$route.name == 'Leaderboard'"
         @click="isMenuOpen = !isMenuOpen"
       />

@@ -1,4 +1,6 @@
-class FlowerLeaderboardEntry {
+export class FlowerLeaderboardEntry {
+  public flower_id!: String; // flower_user/flower_id
+  public username!: String; // flower_user/name
   public nationality!: String; // users/nationality
   public arcade!: String; // flower_user/arcade
 
@@ -8,7 +10,7 @@ class FlowerLeaderboardEntry {
 }
 
 // Model for GET leaderboard/sdvx
-class SdvxLeaderboardEntry extends FlowerLeaderboardEntry {
+export class SdvxLeaderboardEntry extends FlowerLeaderboardEntry {
   public id!: String; // sdvx_user/sdvx_id
   public placement!: Number; // Leaderboard Placement
   public name!: String; // sdvx_user/name
@@ -22,8 +24,9 @@ class SdvxLeaderboardEntry extends FlowerLeaderboardEntry {
 }
 
 // Model for GET leaderboard/iidx
-class IidxLeaderboardEntry extends FlowerLeaderboardEntry {
+export class IidxLeaderboardEntry extends FlowerLeaderboardEntry {
   public id!: String; // iidx_user/iidx_id
+  public name!: String; // iidx_user/name
   public spRank!: Number; //
   public spPoints!: Number; //
   public spClass!: String; //
@@ -38,22 +41,23 @@ class IidxLeaderboardEntry extends FlowerLeaderboardEntry {
 }
 
 // Model for GET leaderboard/pnm
-class PnmLeaderboardEntry extends FlowerLeaderboardEntry {
+export class PnmLeaderboardEntry extends FlowerLeaderboardEntry {
   public id!: String; // pnm_user/pnm_id
   public placement!: Number; // Leaderboard Placement
-  public points!: String // 
+  public name!: String; // pnm_user/name
+  public points!: Number; // 
 
   constructor(data: RemoveMethods<PnmLeaderboardEntry>) {
     super(data);
-    Object.assign(this, data)
+    Object.assign(this, data);
   }
 }
 
 // Model for GET leaderboard/jubeat
-class JubeatLeaderboardEntry extends FlowerLeaderboardEntry {
+export class JubeatLeaderboardEntry extends FlowerLeaderboardEntry {
   public id!: String; // jubeat_user/jubeat_id
   public placement!: Number; // Leaderboard Placement
-  public name!: String; // 
+  public name!: String; // jubeat_user/name
   public jubility!: Number; // 
 
   constructor(data: RemoveMethods<JubeatLeaderboardEntry>) {
