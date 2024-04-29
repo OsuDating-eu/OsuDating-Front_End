@@ -40,7 +40,7 @@ export const useMainStore = defineStore('main', {
       );
     },
     newGame(game: Game) {
-      this.currentGame = game
+      this.currentGame = game;
     }
   }
 });
