@@ -1,5 +1,14 @@
 <script setup lang="ts">
+import { onBeforeMount } from 'vue';
 import AppHeader from './components/layout/AppHeader.vue';
+
+import { useMainStore } from './stores/modules/main';
+const mainStore = useMainStore()
+
+onBeforeMount(async () => {
+  await mainStore.getGames()
+  mainStore.newGame(mainStore.possibleGames[0])
+})
 </script>
 
 <template>
